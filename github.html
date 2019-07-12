@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Click Me !!!</button>
+
+    <div class="result"></div>
+    <script>
+      const button = document.querySelector("button");
+      button.addEventListener("click", function() {
+        // const pr = fetch("https://jsonplaceholder.typicode.com/todos/1");
+        // // console.log(pr);
+        // pr.then(res => {
+        //   console.log(res);
+        // }).then(err => {
+        //   console.log(err);
+        // });
+
+        fetch("http://jsonplaceholder.typicode.com/todos/1")
+          .then(response => response.json())
+          .then(json => console.log(json));
+
+        // const xhr = new XMLHttpRequest();
+
+        // xhr.open("GET", "new.json", true);
+
+        // xhr.onload = function() {
+        //   console.log(this.readyState);
+        // };
+
+        // xhr.send();
+      });
+    </script>
+  </body>
+</html>
